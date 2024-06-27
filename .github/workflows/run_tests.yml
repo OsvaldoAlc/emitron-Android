@@ -32,5 +32,11 @@ jobs:
         echo "keystore_key_alias=" >> gradle.properties
         echo "client_api_key=CLIENT_API_KEY" >> gradle.properties
         echo "app_token=" >> gradle.properties
+
+    - name: Load Google Service file
+      env:
+        DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
+      run: echo $DATA | base64 -di > app/google-services.json
+
     - name: Build with Gradle
       run: ./gradlew build
