@@ -15,10 +15,10 @@ jobs:
     - uses: actions/checkout@v4
     - name: Set signing credentials
       run: |
-        echo "KEYSTORE_FILE=" >> gradle.properties
-        echo "KEYSTORE_PASSWORD=" >> gradle.properties
-        echo "KEYSTORE_KEY_ALIAS=" >> gradle.properties
-        echo "KEYSTORE_KEY_PASSWORD=" >> gradle.properties
+        echo "keystore=" >> gradle.properties
+        echo "keystore_password=" >> gradle.properties
+        echo "keystore_key_password=" >> gradle.properties
+        echo "keystore_key_alias=" >> gradle.properties
     - name: set up JDK 11
       uses: actions/setup-java@v3
       with:
