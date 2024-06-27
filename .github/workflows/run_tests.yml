@@ -24,7 +24,8 @@ jobs:
       uses: gradle/gradle-build-action@v3
     - name: Set signing credentials
       run: |
-        echo "android.enableJetifier=true\nandroid.useAndroidX=true" >> gradle.properties
+        echo "android.enableJetifier=true" >> gradle.properties
+        echo "android.useAndroidX=true" >> gradle.properties
         echo "keystore=" >> gradle.properties
         echo "keystore_password=" >> gradle.properties
         echo "keystore_key_password=" >> gradle.properties
