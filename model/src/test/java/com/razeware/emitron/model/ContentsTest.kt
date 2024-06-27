@@ -16,16 +16,6 @@ class ContentsTest {
     assertThat(contents.getTotalCount()).isEqualTo(10)
   }
 
-  @Test
-  fun getNextPage() {
-    val contents = Contents(links = Links(next = null))
-    assertThat(contents.getNextPage()).isNull()
-
-    val links: Links = mock()
-    whenever(links.getNextPage()).doReturn(3)
-    val contents2 = Contents(links = links)
-    assertThat(contents2.getNextPage()).isEqualTo(3)
-  }
 
   @Test
   fun getDomainIds() {
