@@ -24,7 +24,7 @@ jobs:
       uses: gradle/gradle-build-action@v3
     - name: Set signing credentials
       run: |
-        echo "org.gradle.jvmargs=-Xmx1536m\nkotlin.code.style=official\nkapt.incremental.apt=true\norg.gradle.caching=true\norg.gradle.parallel=true\norg.gradle.daemon=true\nandroid.enableJetifier=true\nandroid.useAndroidX=true" >> gradle.properties
+        echo "android.enableJetifier=true\nandroid.useAndroidX=true" >> gradle.properties
         echo "keystore=" >> gradle.properties
         echo "keystore_password=" >> gradle.properties
         echo "keystore_key_password=" >> gradle.properties
